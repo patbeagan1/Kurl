@@ -107,6 +107,14 @@ fun main() = runBlocking {
 
 ---
 
+<details>
+    <summary>Stability</summary>
+    The curl command-line tool and its underlying library, libcurl, are designed for stability and backward compatibility. The developers strive to avoid breaking changes to the API. In fact, the last time the libcurl API changed in a non-compatible way was for version 7.16.0 in 2006, and the project aims to never do it again.
+While the core API remains stable, curl is under continuous development, with new features, options, and bug fixes being added regularly. These changes are typically additive and do not break existing functionality.
+Regarding the latest changes, curl releases new versions frequently. For example, curl 8.14.1 was released on June 4, 2025 (just a few days ago, relative to today's date), and curl 8.14.0 was released on May 28, 2025. These releases primarily include bug fixes and minor improvements.
+You can find a detailed list of changes for each release on the official curl website's change log: https://curl.se/changes.html
+</details>
+
 ## Development
 
 The core logic resides within the `CurlDslScope` class, which defines the DSL methods and maps them to Ktor client configurations. The `curl` function acts as the entry point, taking an `HttpClient` instance and a lambda with `CurlDslScope` as its receiver to build and execute requests.
