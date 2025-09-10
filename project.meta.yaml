@@ -1,0 +1,44 @@
+name: Kurl
+description: A Kotlin DSL for Ktor that provides a curl-like interface for making HTTP requests, simplifying request construction and execution with a fluent API.
+language: kotlin
+tags:
+  - kotlin
+  - ktor
+  - http-client
+  - dsl
+  - curl
+release_branch: main
+has_release_script: true
+release_repo: patbeagan1/Kurl
+
+scripts:
+  build:
+    command: "mvn package"
+  test:
+    command: "mvn test"
+  release:
+    command: "mvn clean dokka:javadocJar deploy -P deployment"
+
+subtree:
+  repo: git@github.com:patbeagan1/Kurl.git
+  prefix: Kurl
+  branch: develop
+
+roadmap:
+  todo:
+    - Add support for more authentication methods (e.g., OAuth, bearer tokens)
+    - Implement automatic retries with configurable backoff strategies
+    - Enhance response handling with more flexible parsing options (e.g., XML, custom formats)
+    - Add support for multipart form data requests
+    - Improve error reporting with more detailed and actionable messages
+    - Add support for web-sockets
+  in_progress: []
+  done:
+    - DSL for building HTTP requests (GET, POST, PUT, HEAD)
+    - Support for custom headers, query parameters, and request bodies
+    - Ability to parse and execute raw curl command strings
+    - Configuration for timeouts, redirects, and verbose logging
+    - Basic cookie management
+    - Outputting response to a file
+    - Comprehensive documentation with advanced examples and use cases
+    - High-performance curl command parser with optimized tokenization
